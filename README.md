@@ -66,39 +66,7 @@ How It Works:
 - Go back to the start and repeat the process, but this time ignore the last item (since it's already in its correct spot).
 - Continue until no more swaps are needed, meaning the list is sorted.
 ```
-Example:
-Consider sorting the list [5, 2, 9, 1, 5] using bubble sort:
-```java
-First pass:
 
-  Compare 5 and 2, swap → [2, 5, 9, 1, 5]
-  Compare 5 and 9, no swap → [2, 5, 9, 1, 5]
-  Compare 9 and 1, swap → [2, 5, 1, 9, 5]
-  Compare 9 and 5, swap → [2, 5, 1, 5, 9] 
-
-(Now, 9 is in its correct position)
-
-Second pass:
-
-  Compare 2 and 5, no swap → [2, 5, 1, 5, 9]
-  Compare 5 and 1, swap → [2, 1, 5, 5, 9]
-  Compare 5 and 5, no swap → [2, 1, 5, 5, 9]
-
-(Now, the second 5 is in its correct position)
-
-Third pass:
-
-  Compare 2 and 1, swap → [1, 2, 5, 5, 9]
-  Compare 2 and 5, no swap → [1, 2, 5, 5, 9]
-
-(Now, 2 is in its correct position)
-
-Fourth pass:
-
-  Compare 1 and 2, no swap → [1, 2, 5, 5, 9]
-
-(The list is now sorted)
-```
 Time & Space Complexity:
 ``` java
 Best-case: O(n) when the list is already sorted.
@@ -126,25 +94,7 @@ How It Works:
 - Continue until you've gone through the entire list.
 ```
 
-Example:
-If you have the list [4, 2, 7, 1]:
-```java
-Start with 2:
 
-  Compare 2 with 4. Since 2 is smaller, move 4 to the right and insert 2 at the beginning → [2, 4, 7, 1].
-
-Move to 7:
-
-  Compare 7 with 4. Since 7 is larger, leave it where it is → [2, 4, 7, 1].
-
-Move to 1:
-
-  Compare 1 with 7. Move 7 to the right.
-  Compare 1 with 4. Move 4 to the right.
-  Compare 1 with 2. Move 2 to the right and insert 1 at the beginning → [1, 2, 4, 7].
-
-Now the list [1, 2, 4, 7] is sorted!
-```
 Time & Space Complexity: 
 ```java
 Best Case: O(n)
@@ -181,28 +131,7 @@ Repeat:
 
 Example:
 
-Consider sorting the list [38, 27, 43, 3, 9, 82, 10] using merge sort:
-```java
-Divide:
 
-  [38, 27, 43, 3, 9, 82, 10] → [38, 27, 43] and [3, 9, 82, 10]
-  [38, 27, 43] → [38] and [27, 43]
-  [27, 43] → [27] and [43]
-  [3, 9, 82, 10] → [3, 9] and [82, 10]
-  [82, 10] → [82] and [10]
-
-Conquer (Merge):
-
-  Merge [27] and [43] → [27, 43]
-  Merge [38] and [27, 43] → [27, 38, 43]
-  Merge [3] and [9] → [3, 9]
-  Merge [82] and [10] → [10, 82]
-  Merge [3, 9] and [10, 82] → [3, 9, 10, 82]
-
-Finally, merge [27, 38, 43] and [3, 9, 10, 82] → [3, 9, 10, 27, 38, 43, 82]
-
-The list is now sorted: [3, 9, 10, 27, 38, 43, 82].
-```
 
 Time & Space Complexity:
 ```java
@@ -243,30 +172,6 @@ Combine:
 ```
 
 Example:
-Consider sorting the list [10, 7, 8, 9, 1, 5] using quick sort:
-```java
-Choose a Pivot:
-
-  Let's choose the last element as the pivot: 5.
-
-Partition:
-
-  Rearrange the list to place all elements smaller than 5 to the left and all elements larger to the right:
-  [1, 5, 8, 9, 10, 7]
-  Now 5 is in its correct position.
-
-Recursively Sort:
-
-  Apply quick sort to the left sublist [1] (already sorted).
-  Apply quick sort to the right sublist [8, 9, 10, 7].
-  Choose 7 as the pivot.
-  Partition: [1, 5, 7, 9, 10, 8]
-  Apply quick sort to [9, 10, 8].
-
-Final Sort:
-
-The fully sorted list is [1, 5, 7, 8, 9, 10].
-```
 
 Time & Space Complexity:
 ```java
@@ -295,30 +200,6 @@ How Selection Sort Works:
 - Repeat the process for the remaining unsorted portion until the whole list is sorted.
 ```
 Example:
-Consider sorting the list [29, 10, 14, 37, 13] using selection sort:
-```java
-First Pass:
-
-  Find the smallest element in [29, 10, 14, 37, 13] → 10.
-  Swap 10 with 29 → [10, 29, 14, 37, 13].
-
-Second Pass:
-
-  Find the smallest element in [29, 14, 37, 13] → 13.
-  Swap 13 with 29 → [10, 13, 14, 37, 29].
-
-Third Pass:
-
-  Find the smallest element in [14, 37, 29] → 14.
-  No swap needed as 14 is already in the correct position → [10, 13, 14, 37, 29].
-
-Fourth Pass:
-
-  Find the smallest element in [37, 29] → 29.
-  Swap 29 with 37 → [10, 13, 14, 29, 37].
-
-The list is now sorted: [10, 13, 14, 29, 37].
-```
 
 Time & Space Complexity: 
 ```java
